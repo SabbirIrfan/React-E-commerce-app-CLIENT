@@ -3,6 +3,8 @@ import {mobile} from "../responsive";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import React, {useEffect, userState, useState} from "react"
+import axios from "axios";
 const Container = styled.div`
   width: 100vw;
   height: 90vh;
@@ -73,7 +75,46 @@ const Link = styled.a`
 `;
 
 const Login = () => {
+  const [accountNumber, setaccountNumber] = useState("");
+  const [password, setpassword] = useState("");
   let navigate = useNavigate();
+
+
+  useEffect(()=>{
+
+  },[accountNumber,password]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      
+      const response =  await axios.post("http://localhost:8000/auth/login",
+        JSON.stringify({accountNumber,password}),
+        {
+          headers :{ 'Content-Type' : 'application/json'},
+
+        }
+      );
+      console.log(JSON.stringify(response?.data));
+
+      const accessToken = response?.data?.token;
+      console.log(accessToken);
+      
+      setaccountNumber("");
+      setpassword("");
+      
+      navigate("/user");
+
+      
+    } catch (err) {
+
+      console.log(err);
+    }
+
+    console.log("success submission");
+  }
+
   return (
     <div>
     <Container_nav>
@@ -84,15 +125,28 @@ const Login = () => {
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
+          <Input 
+            placeholder="accountNumber"
+            autoComplete="off"
+            onChange={(e)=> setaccountNumber(e.target.value)}
+            required
+           />
+          <Input 
+            placeholder="password"
+            type={password}
+            autoComplete="off"
+            onChange={(e)=> setpassword(e.target.value)}
+            required
+           />
           <Button 
-              onClick={()=>{
-                navigate("/user");
+              onClick={(e)=>{
+                handleSubmit(e);
+                
               }}
               >
                 Login
-              </Button>           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
+              </Button>           
+              <Link>Forgot The PASSWORD?</Link>
           <Link>CREATE A NEW ACCOUNT</Link>
         </Form>
       </Wrapper>
