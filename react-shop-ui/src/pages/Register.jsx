@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { mobile } from "../responsive";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import React, {useEffect, userState, useState} from "react"
+import axios from "axios";
+
 const Container = styled.div`
   width: 100%;
   height: 87vh;
@@ -59,6 +62,48 @@ const Button = styled.button`
 
 const Register = () => {
   let navigate = useNavigate();
+  const [username,setusername] = useState("");
+  const [address,setaddress] = useState("");
+  const [email,setemail] = useState("");
+  const [password,setpassword] = useState("");
+  const [phoneNumber,setphoneNumber] = useState("");
+  const [confirmPassword,setconfirmPassword] = useState("");
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      
+      const response =  await axios.post("http://localhost:8000/register",
+        JSON.stringify({username,address,email,password,phoneNumber,confirmPassword}),
+        {
+          headers :{ 'Content-Type' : 'application/json'},
+          // withCredentials : true 
+
+        }
+      );
+      console.log(JSON.stringify(response?.data));
+
+      const accessToken = response?.data?.token;
+      console.log(accessToken);
+      
+      setaddress("");
+      setemail("");
+      setusername("");
+      setphoneNumber("");
+      setpassword("");
+      console.log("success submission");
+
+      navigate("/user");
+
+      
+    } catch (err) {
+
+      console.log(err);
+    }
+
+  }
 
   return (
     <div>
@@ -68,19 +113,54 @@ const Register = () => {
 
           <Title>CREATE AN ACCOUNT</Title>
           <Form>
-            <Input placeholder="full name" />
-            <Input placeholder="mobile no" />
-            <Input placeholder="email" />
-            <Input placeholder="NID" />
-            <Input placeholder="password" />
-            <Input placeholder="confirm password" />
+          <Input 
+            placeholder="username"
+            autoComplete="off"
+            onChange={(e)=> setusername(e.target.value)}
+            required
+           />
+          <Input 
+            placeholder="address"
+            autoComplete="off"
+            onChange={(e)=> setaddress(e.target.value)}
+            required
+           />
+          <Input 
+            placeholder="email"
+            autoComplete="off"
+            onChange={(e)=> setemail(e.target.value)}
+            required
+           />
+          <Input 
+            placeholder="password"
+            type={"password"}
+            autoComplete="off"
+            onChange={(e)=> setpassword(e.target.value)}
+            required
+           />
+          <Input 
+            placeholder="phoneNumber"
+           autoComplete="off"
+            onChange={(e)=> setphoneNumber(e.target.value)}
+            required
+           />
+            <input
+              placeholder = "confirmPassword"
+              type= {"password"}
+              autoComplete = "off"
+              onChange={
+                (e)=> {
+                  setconfirmPassword(e.target.value)
+                }
+              }
+            />
             <Agreement>
               By creating an account, I consent to the processing of my personal
               data in accordance with the <b>PRIVACY POLICY</b>
             </Agreement>
             <Button
-            onClick={()=>{
-              navigate("/user");
+            onClick={(e)=>{
+              handleSubmit(e);
             }}
             >
               CREATE</Button>

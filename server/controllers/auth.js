@@ -22,7 +22,7 @@ fs.readFile("./../server/database/user.json", "utf8", (err, data) => {
 
 export const login = async (req, res) => {
   // console.log(req.body);
-  const { accountNumber, password } = req.body;
+  const {  password,accountNumber } = req.body;
   if (!accountNumber || !password) {
     res.status(200).json({ message: "All field of data must be required" });
   }
