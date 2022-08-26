@@ -1,8 +1,5 @@
-import bcrypt from "bcryptjs";
 import express from "express";
-import jwt from "jsonwebtoken";
 import addOrder from "../models/orderlistSchema.js";
-import User from "../models/userSchema.js";
 
 
 const router = express.Router();
@@ -60,10 +57,7 @@ const addOrders = async (req, res) => {
         amount
       
     });
-    // const token = jwt.sign({ email: result.email, id: result._id }, "KEY", {
-    //   expiresIn: "1h",
-    // });
-    // res.cookie("token", token,{httpOnly:true}).send('Successfully registration completed!');
+    
     res.status(200).json( "success created" );
    }
     

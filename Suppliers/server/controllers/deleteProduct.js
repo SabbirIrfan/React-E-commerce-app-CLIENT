@@ -1,7 +1,5 @@
-import bcrypt from "bcryptjs";
-import e from "express";
+
 import express from "express";
-import jwt from "jsonwebtoken";
 import Products from "../models/productSchema.js";
 
 const router = express.Router();
@@ -43,8 +41,7 @@ const addProducts = async (req, res) => {
 
         } );
     }else{
-        // const hashedPassword = await bcrypt.hash(password, 12);
-    // // console.log(phoneNumber);
+       
        Products.create({
         product_id,
         supplier_id,
@@ -60,10 +57,7 @@ const addProducts = async (req, res) => {
     
 
     
-    // const token = jwt.sign({ email: result.email, id: result._id }, "KEY", {
-    //   expiresIn: "1h",
-    // });
-    // res.cookie("token", token,{httpOnly:true}).send('Successfully registration completed!');
+    
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Something went wrong." });
