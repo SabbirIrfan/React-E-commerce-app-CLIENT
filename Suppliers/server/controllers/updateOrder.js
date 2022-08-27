@@ -8,14 +8,7 @@ const router = express.Router();
 
 const updateOrder = async (req, res) => {
   
-/////// schema of product for supplier ////
-// product_id : {type: String, required: true},
-// supplier_id : {type: String, required: true, unique: true},
-// transaction_id : {type: String, required: true},
-// address : {type: String, required: true},
-// price : {type: Number, default : 0},
-// image :{type: String, required: false}
-// amount : {type: Number, default : 0},
+
   const { product_id,supplier_id, transaction_id, address, price, amount,status} =
     req.body;
   // console.log(req.body);

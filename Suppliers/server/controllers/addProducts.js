@@ -6,11 +6,7 @@ const router = express.Router();
 
 const addProducts = async (req, res) => {
   
-/////// schema of product for supplier ////
-//     product_id : {type: String, required: true},
-//     supplier_id : {type: String, required: true, unique: true},
-//     price : {type: Number, default : 0},
-//     image :{type: String, required: true}
+
   const { product_id,supplier_id, price,amount} =
     req.body;
   // console.log(req.body);

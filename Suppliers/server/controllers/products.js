@@ -1,6 +1,5 @@
 
 import express from "express";
-import fs from "fs";
 
 import User from "../models/productSchema.js";
 const router = express.Router();

@@ -1,23 +1,23 @@
 import bcrypt from "bcryptjs";
 import express from "express";
 // import PostMessage from '../models/postMessage.js';
-import fs from "fs";
+// import fs from "fs";
 import jwt from "jsonwebtoken";
 ///DATABASE
 import User from "../models/userSchema.js";
 const router = express.Router();
 
-///DATABASEE
-let USERS = [];
+// ///DATABASEE
+// let USERS = [];
 
-fs.readFile("./../server/database/user.json", "utf8", (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  USERS = JSON.parse(data);
-  // console.log(data);
-});
+// fs.readFile("./../server/database/user.json", "utf8", (err, data) => {
+//   if (err) {
+//     console.error(err);
+//     return;
+//   }
+//   USERS = JSON.parse(data);
+//   // console.log(data);
+// });
 
 
 export const login = async (req, res) => {
