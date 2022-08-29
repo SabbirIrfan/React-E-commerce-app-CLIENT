@@ -75,7 +75,7 @@ const Register = () => {
     
     try {
       
-      const {response} =  await axios.post("http://localhost:8000/register",
+      const response =  await axios.post("http://localhost:8000/register",
         JSON.stringify({username,address,email,password,accountNumber,confirmPassword}),
         {
           headers :{ 'Content-Type' : 'application/json'},
@@ -93,9 +93,12 @@ const Register = () => {
       setusername("");
       setaccountNumber("");
       setpassword("");
-      console.log("success submission");
+      console.log("success submission",response.data);
+      
+      localStorage.setItem('user' ,JSON.stringify(response.data));
 
-      navigate("/user",{state: {accountNumber:accountNumber, username: username, address: address, email: email}});
+      // navigate("/user",{state: {accountNumber:accountNumber, username: username, address: address, email: email}});
+      navigate("/user");
 
       
     } catch (err) {

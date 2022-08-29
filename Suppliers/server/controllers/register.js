@@ -22,6 +22,7 @@ const register = async (req, res) => {
     res.status(200).json({ message: "All field of data must be required" });
     return;
   }
+ 
 
   try {
     // console.log(phoneNumber);

@@ -98,6 +98,7 @@ const Navbar_user = () => {
           <MenuItem 
           onClick={()=>{
             navigate("/home");
+            
           }}
           >
             SIGN Out</MenuItem>
