@@ -30,7 +30,7 @@ const addOrders = async (req, res) => {
     const existingOrder = await addOrder.findOne({product_id});
     console.log(existingOrder);
     if(existingOrder){
-        addOrder.updateOne({product_id : product_id}, {amount: existingOrder.amount + amount}, (err,addOrder)=>{
+        addOrder.updateOne({product_id : product_id}, {amount: existingOrder.amount + amount, status: status}, (err,addOrder)=>{
             if(err) throw err;
             console.log("Record updated successfully");
     

@@ -75,9 +75,11 @@ const Link = styled.a`
   cursor: pointer;
 `;
 
-const Login = () => {
-  const [accountNumber, setaccountNumber] = useState("");
-  const [password, setpassword] = useState("");
+const AddOrder = () => {
+  const [product_id, setProductId] = useState("");
+  const [supplier_id, setSupplierId] = useState("");
+  const [price, setPrice] = useState("");
+  const [amount, setAmount] = useState("");
   const [user,setUser] = useState();
   let navigate = useNavigate();
   let username, email,balance,address;
@@ -97,38 +99,28 @@ const Login = () => {
     e.preventDefault();
     
     try {
-      const response =  await axios.post("http://localhost:8000/auth/login",
-        JSON.stringify({accountNumber,password}),
+      const response =  await axios.post("http://localhost:8000/addProducts",
+        JSON.stringify({product_id,supplier_id,price,amount}),
         {
           headers :{ 'Content-Type' : 'application/json'},
           // withCredentials : true 
 
         }
       );
-      const response1 =  await axios.post("http://localhost:8000/userprofile",
-        JSON.stringify({accountNumber}),
-        {
-          headers :{ 'Content-Type' : 'application/json'},
-          // withCredentials : true 
-
-        }
-      );
-      const www = response.data;
-      setUser(response.data);
-      localStorage.setItem('user' ,JSON.stringify(response.data));
+    
       // console.log("User information is at login page", JSON.parse(localStorage.getItem('user')));
 
 
       // const accessToken = response?.data?.token;
       // console.log(accessToken);
       
-      setaccountNumber("");
-      setpassword("");
+      setProductId("");
+      setSupplierId("");
+      setPrice("");
+      setAmount("");
       
       // <User accountNumber= {accountNumber}/>
-      var username = response1?.data?.existingUser?.username; 
-      var address = response1?.data?.existingUser?.address; 
-      var email = response1?.data?.existingUser?.email; 
+      
 
       // navigate("/user",{state: {accountNumber:accountNumber, username: username, address: address, email: email}});
       navigate("/user");
@@ -151,19 +143,30 @@ const Login = () => {
     </Container_nav>
     <Container>
       <Wrapper>
-        <Title>SIGN IN</Title>
+        <Title>Create Product</Title>
         <Form>
           <Input 
-            placeholder="accountNumber"
+            placeholder="Product_id"
             autoComplete="off"
-            onChange={(e)=> setaccountNumber(e.target.value)}
+            onChange={(e)=> setProductId(e.target.value)}
             required
            />
           <Input 
-            placeholder="password"
-            type={password}
+            placeholder="Supplier_id"
             autoComplete="off"
-            onChange={(e)=> setpassword(e.target.value)}
+            onChange={(e)=> setSupplierId(e.target.value)}
+            required
+           />
+           <Input 
+            placeholder="Price/Unit"
+            autoComplete="off"
+            onChange={(e)=> setPrice(e.target.value)}
+            required
+           />
+           <Input 
+            placeholder="Amount"
+            autoComplete="off"
+            onChange={(e)=> setAmount(e.target.value)}
             required
            />
           <Button 
@@ -172,16 +175,14 @@ const Login = () => {
                 
               }}
               >
-                Login
+                Submit Product
               </Button>           
-              <Link>Forgot The PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+              
         </Form>
       </Wrapper>
     </Container>
-    <Footer/>
     </div>
   );
 };
 
-export default Login;
+export default AddOrder;

@@ -66,7 +66,7 @@ const Register = () => {
   const [address,setaddress] = useState("");
   const [email,setemail] = useState("");
   const [password,setpassword] = useState("");
-  const [phoneNumber,setphoneNumber] = useState("");
+  const [accountNumber,setaccountNumber] = useState();
   const [confirmPassword,setconfirmPassword] = useState("");
 
 
@@ -75,8 +75,8 @@ const Register = () => {
     
     try {
       
-      const response =  await axios.post("http://localhost:8000/register",
-        JSON.stringify({username,address,email,password,phoneNumber,confirmPassword}),
+      const {response} =  await axios.post("http://localhost:8000/register",
+        JSON.stringify({username,address,email,password,accountNumber,confirmPassword}),
         {
           headers :{ 'Content-Type' : 'application/json'},
           // withCredentials : true 
@@ -91,16 +91,16 @@ const Register = () => {
       setaddress("");
       setemail("");
       setusername("");
-      setphoneNumber("");
+      setaccountNumber("");
       setpassword("");
       console.log("success submission");
 
-      navigate("/user");
+      navigate("/user",{state: {accountNumber:accountNumber, username: username, address: address, email: email}});
 
       
     } catch (err) {
 
-      console.log(err);
+      console.log("error from frontend register page",err);
     }
 
   }
@@ -141,7 +141,7 @@ const Register = () => {
           <Input 
             placeholder="phoneNumber"
            autoComplete="off"
-            onChange={(e)=> setphoneNumber(e.target.value)}
+            onChange={(e)=> setaccountNumber(e.target.value)}
             required
            />
             <input

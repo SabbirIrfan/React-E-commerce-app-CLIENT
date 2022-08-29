@@ -4,9 +4,8 @@ import styled from "styled-components";
 // import Footer from "../components/Footer";
 import Navbar_user from "../components/Navbar_user";
 import { mobile } from "../responsive";
-import { useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
-import { useEffect ,useState} from "react";
+import { useNavigate } from "react-router-dom";
+
 import Login from "../pages/Login.jsx";
 const Container = styled.div``;
 
@@ -156,73 +155,10 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
-const User = (  ) => {
+const User = () => {
 
-  const navigate = useNavigate();
-  const [user, setUser] = useState();
-  useEffect(() => {
-    const loggedInUser = JSON.parse(localStorage.getItem("user")).result;
-    if (loggedInUser) {
-      const foundUser =  loggedInUser
-      setUser(foundUser);
-    }
+  let navigate = useNavigate();
 
-  }, []);
-  const accountNumber = JSON.parse(localStorage.getItem("user")).result.accountNumber;
-  const address = JSON.parse(localStorage.getItem("user")).result.address;
-  const email = JSON.parse(localStorage.getItem("user")).result.email;
-  const username = JSON.parse(localStorage.getItem("user")).result.username;
-
-  const handle_product = async (e) => {
-    e.preventDefault();
-    
-    try {
-     
-      navigate("/ProductList",{state:{accountNumber}});
-
-
-      
-    } catch (err) {
-
-      console.log(err);
-    }
-
-    console.log("success submission");
-  }
-  
-  const handle_OrderList = async (e) => {
-    e.preventDefault();
-    
-    try {
-     
-      navigate("/Orderlist",{state:{accountNumber}});
-
-
-      
-    } catch (err) {
-
-      console.log(err);
-    }
-
-    console.log("success submission");
-  }
-  const handle_addOrder = async (e) => {
-    e.preventDefault();
-    
-    try {
-     
-      navigate("/addOrder",{state:{accountNumber}});
-
-
-      
-    } catch (err) {
-
-      console.log(err);
-    }
-
-    console.log("success submission");
-  }
-  
   return (
     <Container>
       <Navbar_user />
@@ -230,29 +166,13 @@ const User = (  ) => {
         <Title>Your Account Detail</Title>
         <Top>
           <TopButton
-           onClick={(e)=>{
-            handle_product(e);
-
+           onClick={()=>{
+            navigate("/ProductList")
           }}
           >
             ProductList
           </TopButton>
-          <TopButton
-           onClick={(e)=>{
-            handle_OrderList(e);
-
-          }}
-          >
-            OrderList
-          </TopButton>
-          <TopButton
-           onClick={(e)=>{
-            handle_addOrder(e);
-
-          }}
-          >
-            AddProduct
-          </TopButton>
+          
           <TopTexts>
             {/* <TopText>Shopping Bag(2)</TopText> */}
             {/* <TopText>Your Wishlist (0)</TopText> */}
@@ -264,24 +184,25 @@ const User = (  ) => {
             <SummaryTitle></SummaryTitle>
             <SummaryItem>
               <SummaryItemText>Name</SummaryItemText>
-              <SummaryItemPrice>{username}</SummaryItemPrice>
+              <SummaryItemPrice>Sabbir Irfan</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Email</SummaryItemText>
-              <SummaryItemPrice>{email}</SummaryItemPrice>
+              <SummaryItemPrice>Sabbirirfan29@gmail.com</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
               <SummaryItemText>Supplier Id</SummaryItemText>
-              <SummaryItemPrice>{accountNumber}</SummaryItemPrice>
+              <SummaryItemPrice>{props}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>address</SummaryItemText>
-              <SummaryItemPrice>{address}</SummaryItemPrice>
+              <SummaryItemText>NID</SummaryItemText>
+              <SummaryItemPrice>xxxxxxxxxx</SummaryItemPrice>
             </SummaryItem>
-            {/* <SummaryItem type="total">
+            <SummaryItem type="total">
               <SummaryItemText>Balance</SummaryItemText>
               <SummaryItemPrice>99999999999999999</SummaryItemPrice>
-            </SummaryItem> */}
+            </SummaryItem>
+            <Button>Make a Transection</Button>
           </Summary>
         </Bottom>
       </Wrapper>

@@ -1,11 +1,13 @@
 import express from "express";
-import { showProducts } from './../controllers/products.js';
+import { showProducts,userProducts } from './../controllers/products.js';
 import authMiddle from './../middleware/auth.js';
 
 
 const router = express.Router();
 
 router.get('/',showProducts);
+
+router.post('/',userProducts);
 
 // router.get('/logout', logout);
 // router.post('/login', login);

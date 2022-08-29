@@ -6,7 +6,7 @@ import { mobile } from "../responsive";
 import pic from "./recourse/Capture.png"
 import { useNavigate } from "react-router-dom";
 const Container = styled.div`
-  height: 98px;
+  height: 58px;
   background:
   rgba(255, 215, 215, 10.5);
 
@@ -81,7 +81,7 @@ const Navbar_user = () => {
         <Left>
           {/* <Language>EN</Language> */}
           {/* E-CASH */}
-          <img src={pic} style={{borderRadius :25,width: 220, height: 80}} />
+          {/* <img src={pic} style={{borderRadius :25,width: 220, height: 80}} /> */}
 
             
 

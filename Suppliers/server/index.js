@@ -15,8 +15,9 @@ import orderlist from './routes/orderlist.js';
 
 import addOrder from './routes/addOrder.js';
 import updateOrder from './routes/updateOrder.js';
+import userprofile from "./routes/userprofile.js";
 
-
+import userProducts from "./routes/userproduct.js";
 
 dotenv.config();
 
@@ -44,6 +45,10 @@ app.use('/products',products);
 app.use('/orderlist',orderlist);
 app.use('/addOrder',addOrder);
 app.use('/updateOrder',updateOrder);
+app.use('/userprofile',userprofile);
+
+app.use('/userProducts',userProducts);
+
 
 
 

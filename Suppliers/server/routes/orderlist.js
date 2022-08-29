@@ -4,7 +4,7 @@ import { showorders } from './../controllers/orderlist.js';
 
 const router = express.Router();
 
-router.get('/',showorders);
+router.post('/',showorders);
 
 // router.get('/logout', logout);
 // router.post('/login', login);

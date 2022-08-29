@@ -6,7 +6,7 @@ import { mobile } from "../responsive";
 import pic from "./recourse/Capture.png"
 import { useNavigate } from "react-router-dom";
 const Container = styled.div`
-  height: 98px;
+  height: 58px;
   background:
   rgba(255, 215, 215, 10.5);
 
@@ -27,7 +27,7 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   font-weight: 1000;
-  font-size:400%;
+  font-size:160%;
 `;
 
 const Language = styled.span`
@@ -80,9 +80,9 @@ const Navbar = () => {
       <Wrapper>
         <Left>
           {/* <Language>EN</Language> */}
-          <img src={pic} style={{borderRadius :25,width: 220, height: 80}} />
+          {/* <img src={pic} style={{borderRadius :25,width: 220, height: 80}} /> */}
             
-          E-CASH
+          Connect And Deliver!
           {/* <SearchContainer>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 16 }} />

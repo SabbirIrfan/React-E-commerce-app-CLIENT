@@ -68,7 +68,7 @@ const Button = styled.button`
 
 
 
-const ProductList =  ({accountNumber}) => {
+const OrderList =  ({accountNumber}) => {
   let navigate = useNavigate();
   let location = useLocation();
   // const [product_id,setproductid] = useState("");
@@ -84,7 +84,7 @@ const ProductList =  ({accountNumber}) => {
 
     try {
       const  {data}  = await axios.post(
-        "http://localhost:8000/userProducts",
+        "http://localhost:8000/orderlist",
         JSON.stringify({supplier_id}),
           {
             headers :{ 'Content-Type' : 'application/json'},
@@ -119,7 +119,11 @@ const ProductList =  ({accountNumber}) => {
           <th>Product_id</th>
           <th>Supplier_id</th>
           <th>Price/Unit</th>
+          <th>Address</th>
           <th>Amount</th>
+
+          <th>Status</th>
+          
         </tr>
       </thead>
       {products.map((product) => (
@@ -128,7 +132,10 @@ const ProductList =  ({accountNumber}) => {
           <td>{product.product_id}</td>
           <td>{product.supplier_id}</td>
           <td>{product.price}</td>
+          <td>{product.address}</td>
           <td>{product.amount}</td>
+          <td>{product.status}</td>
+
         </tr>
       </tbody>
         
@@ -151,4 +158,4 @@ const ProductList =  ({accountNumber}) => {
   
 };
 
-export default ProductList;
+export default OrderList;

@@ -7,7 +7,7 @@ const router = express.Router();
 
 const register = async (req, res) => {
   // console.log(req.body);
-  const { address, email, username, password, phoneNumber, confirmPassword } =
+  const { address, email, username, password, accountNumber, confirmPassword } =
     req.body;
   // console.log(req.body);
 
@@ -16,7 +16,7 @@ const register = async (req, res) => {
     !address ||
     !email ||
     !password ||
-    !phoneNumber ||
+    !accountNumber ||
     !confirmPassword
   ) {
     res.status(200).json({ message: "All field of data must be required" });
@@ -25,8 +25,11 @@ const register = async (req, res) => {
 
   try {
     // console.log(phoneNumber);
-    const existingUser = await User.findOne({email})
+    let existingUser = await User.findOne({email})
     // console.log(existingUser);
+    if(!existingUser)
+      existingUser = await User.findOne({accountNumber})
+
 
     if (existingUser)
       return res.status(400).json({ message: "User already exists." });
@@ -41,7 +44,8 @@ const register = async (req, res) => {
       password: hashedPassword,
       username,
       address,
-      accountNumber : phoneNumber,
+      accountNumber : accountNumber,
+      balance : 0,
     });
     const token = jwt.sign({ email: result.email, id: result._id }, "KEY", {
       expiresIn: "1h",
