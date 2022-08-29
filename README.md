@@ -1,6 +1,6 @@
 # React-E-commerce-app-CLIENT
 <h1 align="center">
-Online payment System For Web Project
+Suppliers backend and frontend For Web Project
 </h1>
 <p align="center">
 MongoDB, Expressjs, React, Redux, Nodejs
