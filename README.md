@@ -58,13 +58,13 @@ $ npm start // run it locally
 ## Server-side usage(PORT: 8000)
 
 ### Prepare your secret
-```
-(You need to add .env File to run the Server side API code)
-.env File Structure
-NODE_ENV = development
-PORT = 8000
-CONNECTION_URL = Your Mongodb Connection Url
-```
+#```
+#(You need to add .env File to run the Server side API code)
+#.env File Structure
+#NODE_ENV = development
+#PORT = 8000
+#CONNECTION_URL = Your Mongodb Connection Url
+#```
 
 ### Start
 
@@ -97,8 +97,4 @@ styled-components : ^5.3.5 | cors: ^2.8.5
 ## BUGs or comments
 [Create new Issues](https://github.com/NaimulHasanFahim/webproject/issues) (preferred)
 
-Email Me: mohammadfahimshah@gmail.com (welcome, say hi)
-
-
-### License
-[MIT](https://github.com/amazingandyyy/mern/blob/master/LICENSE)
+Email Me: sabbirirfan29@gmail.com
