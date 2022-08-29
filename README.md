@@ -24,7 +24,7 @@ MERN stack is the idea of using Javascript/Node for fullstack web development.
 
 ## clone or download
 ```terminal
-$ git clone https://github.com/NaimulHasanFahim/bankproject.git
+$ git clone https://github.com/SabbirIrfan/React-E-commerce-app-CLIENT/
 $ npm i
 ```
 
@@ -47,7 +47,7 @@ server/
 
 notice, you need client and server runs concurrently in different terminal session, in order to make them talk to each other
 
-## Client-side usage(PORT: 3001)
+## Client-side usage(PORT: 3000)
 ```terminal
 $ cd client   // go to client folder
 $ npm i       // npm install packages
@@ -55,7 +55,7 @@ $ npm start // run it locally
 
 ```
 
-## Server-side usage(PORT: 5000)
+## Server-side usage(PORT: 8000)
 
 ### Prepare your secret
 ```
@@ -69,7 +69,7 @@ CONNECTION_URL = Your Mongodb Connection Url
 ### Start
 
 ``` terminal
-$ cd server   // go to server folder
+$ cd Suppliers/server   // go to server folder
 $ npm i       // npm install packages
 $ npm start // run it locally
 ```
