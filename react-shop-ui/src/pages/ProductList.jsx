@@ -78,25 +78,35 @@ const ProductList =  ({accountNumber}) => {
 
   
   const [products, setProducts] = useState([]);
+ 
+
   const supplier_id = location.state.accountNumber;
   console.log("this is the product page", supplier_id);
+  function sup_id(sup){
+    if(sup.supplier_id == supplier_id){
+      return sup;
+    
+    }
+  }
   const handle_product = async (e)=>{
 
     try {
-      const  {data}  = await axios.post(
-        "http://localhost:8000/userProducts",
-        JSON.stringify({supplier_id}),
-          {
-            headers :{ 'Content-Type' : 'application/json'},
-            // withCredentials : true 
-  
-          }
-  
-      );
-  
-      const products = data.result;
+
+      
+      let data1;
+      await axios({
+        method : 'get',
+        url :  "http://localhost:8000/products",
+        // params:supplier_id
+
+      }).then(res=>{
+        data1 = res;
+        console.log("this is the data from get mathod",data1.data);
+      }).catch(err => console.log(err));
+      console.log(" all the products = " ,data1.data);
+      const products = data1.data.result.filter(sup_id);
+
       setProducts(products);
-      console.log(data,"this is the product list");  
     } catch (error) {
       console.log(error,"its in the product fetch");
     }

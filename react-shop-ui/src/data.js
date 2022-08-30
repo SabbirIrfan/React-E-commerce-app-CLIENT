@@ -1,15 +1,18 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://i.ibb.co/HqkyFNv/image-1.jpg",
+      img: "https://i.ibb.co/YyhhcqD/banner-1.png",
       title: "Avoid Haram BRO",
       desc: "DON'T COMPROMISE ON YOU\'R DEEN",
       bg: "f5fafd",
     },
     
+//     // <a href="https://ibb.co/VQTTgPH"><img src="https://i.ibb.co/YyhhcqD/banner-1.png" alt="banner-1" border="0"></a>
+// {/* <a href="https://ibb.co/0sLsrJb"><img src="https://i.ibb.co/LNyN1p7/Online-Selling-and-Buying-scaled.jpg" alt="Online-Selling-and-Buying-scaled" border="0"></a> */}
+// {/* <a href="https://ibb.co/1qLRYPB"><img src="https://i.ibb.co/Wy6BNM7/Online-shopping-concept.jpg" alt="Online-shopping-concept" border="0"></a><br /><a target='_blank' href='https://freeonlinedice.com/'>ten sided dice roller</a><br /> */}
     {
       id: 2,
-      img: "https://i.ibb.co/zR94qVM/online-banking.jpg",
+      img: "https://i.ibb.co/LNyN1p7/Online-Selling-and-Buying-scaled.jpg",
       title: "Haram khele dua kobul hoi na \"bosh\"",
       desc: "DON'T COMPROMISE ON YOU\'R DEEN",
       bg: "fcf1ed",
@@ -20,17 +23,17 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "https://i.ibb.co/zR94qVM/online-banking.jpg",
+      img:"https://i.ibb.co/Wy6BNM7/Online-shopping-concept.jpg",
       title: "SHIRT STYLE!",
     },
     {
       id: 2,
-      img: "https://i.ibb.co/zR94qVM/online-banking.jpg",
+      img: "https://i.ibb.co/Wy6BNM7/Online-shopping-concept.jpg",
       title: "LOUNGEWEAR LOVE",
     },
     {
       id: 3,
-      img: "https://i.ibb.co/HqkyFNv/image-1.jpg",
+      img: "https://i.ibb.co/Wy6BNM7/Online-shopping-concept.jpg",
       title: "LIGHT JACKETS",
     },
   ];
