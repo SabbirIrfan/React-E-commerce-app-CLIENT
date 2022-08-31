@@ -53,7 +53,7 @@ app.use('/userProducts',userProducts);
 
 
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3006;
 // console.log(PORT);
 // console.log(process.env.CONNECTION_URL);
 const CONNECTION_URL = 'mongodb+srv://sabbirirfan:Password@cluster0.sp3mr.mongodb.net/suplier?retryWrites=true&w=majority';
