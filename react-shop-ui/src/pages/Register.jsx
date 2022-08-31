@@ -134,6 +134,12 @@ const Register = () => {
             onChange={(e)=> setemail(e.target.value)}
             required
            />
+            <Input 
+            placeholder="phoneNumber"
+           autoComplete="off"
+            onChange={(e)=> setaccountNumber(e.target.value)}
+            required
+           />
           <Input 
             placeholder="password"
             type={"password"}
@@ -141,22 +147,16 @@ const Register = () => {
             onChange={(e)=> setpassword(e.target.value)}
             required
            />
-          <Input 
-            placeholder="phoneNumber"
+           
+            <Input 
+            placeholder="Confirm Password"
+            type="password"
            autoComplete="off"
-            onChange={(e)=> setaccountNumber(e.target.value)}
+            onChange={(e)=> setconfirmPassword(e.target.value)}
             required
            />
-            <input
-              placeholder = "confirmPassword"
-              type= {"password"}
-              autoComplete = "off"
-              onChange={
-                (e)=> {
-                  setconfirmPassword(e.target.value)
-                }
-              }
-            />
+         
+            
             <Agreement>
               By creating an account, I consent to the processing of my personal
               data in accordance with the <b>PRIVACY POLICY</b>

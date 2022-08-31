@@ -1,11 +1,12 @@
 export const sliderItems = [
-    {
-      id: 1,
-      img: "https://i.ibb.co/YyhhcqD/banner-1.png",
-      title: "Avoid Haram BRO",
-      desc: "DON'T COMPROMISE ON YOU\'R DEEN",
-      bg: "f5fafd",
-    },
+  {
+    id: 1,
+    img: "https://i.ibb.co/Wy6BNM7/Online-shopping-concept.jpg",
+    title: "EXPAND YOUR SALES",
+    desc: "Get More Order to deliver",
+    bg: "fcf1ed",
+  },
+  
     
 //     // <a href="https://ibb.co/VQTTgPH"><img src="https://i.ibb.co/YyhhcqD/banner-1.png" alt="banner-1" border="0"></a>
 // {/* <a href="https://ibb.co/0sLsrJb"><img src="https://i.ibb.co/LNyN1p7/Online-Selling-and-Buying-scaled.jpg" alt="Online-Selling-and-Buying-scaled" border="0"></a> */}
@@ -13,10 +14,18 @@ export const sliderItems = [
     {
       id: 2,
       img: "https://i.ibb.co/LNyN1p7/Online-Selling-and-Buying-scaled.jpg",
-      title: "Haram khele dua kobul hoi na \"bosh\"",
-      desc: "DON'T COMPROMISE ON YOU\'R DEEN",
+      title: "Get Paid instantly",
+      desc: "Prefer you\'r policy",
       bg: "fcf1ed",
     },
+    {
+      id: 3,
+      img: "https://i.ibb.co/YyhhcqD/banner-1.jpg",
+      title: "CONNECT ONLINE",
+      desc: "Sell you\'r product around All over the country",
+      bg: "f5fafd",
+    },
+    
     
   ];
 

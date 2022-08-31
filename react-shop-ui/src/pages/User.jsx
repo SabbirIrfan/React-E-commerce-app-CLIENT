@@ -31,6 +31,7 @@ const TopButton = styled.button`
   padding: 10px;
   font-weight: 600;
   cursor: pointer;
+  flex: .4;
   border: ${(props) => props.type === "filled" && "none"};
   background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent"};
@@ -271,7 +272,7 @@ const User = (  ) => {
               <SummaryItemPrice>{email}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>
-              <SummaryItemText>Supplier Id</SummaryItemText>
+              <SummaryItemText>ID</SummaryItemText>
               <SummaryItemPrice>{accountNumber}</SummaryItemPrice>
             </SummaryItem>
             <SummaryItem>

@@ -1,13 +1,11 @@
 import styled from "styled-components";
-import Navbar from "../components/Navbar_user";
-import Announcement from "../components/Announcement";
-import Products from "../components/Products";
-import Newsletter from "../components/Newsletter";
+
 import Footer from "../components/Footer";
 import { useNavigate,useLocation } from "react-router-dom";
 import React, {useEffect, userState, useState} from "react"
 import axios from "axios";
 import { mobile } from "../responsive";
+import Navbar_user from "../components/Navbar_user";
 
 
 const Container = styled.div`
@@ -111,7 +109,7 @@ const OrderList =  ({accountNumber}) => {
 
   return (
   <div>
-    <Navbar/>
+    <Navbar_user/>
     <Container>
     <table border = "3px">
       <thead>

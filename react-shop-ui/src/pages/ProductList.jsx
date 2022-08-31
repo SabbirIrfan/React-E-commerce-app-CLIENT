@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Navbar from "../components/Navbar_user";
 import Announcement from "../components/Announcement";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
@@ -8,6 +7,7 @@ import { useNavigate,useLocation } from "react-router-dom";
 import React, {useEffect, userState, useState} from "react"
 import axios from "axios";
 import { mobile } from "../responsive";
+import Navbar_user from "../components/Navbar_user";
 
 
 const Container = styled.div`
@@ -121,8 +121,8 @@ const ProductList =  ({accountNumber}) => {
 
   return (
   <div>
-    <Navbar/>
-    <Container>
+    <Navbar_user/>
+    <Container felx =".3">
     <table border = "3px">
       <thead>
         <tr>
@@ -145,9 +145,6 @@ const ProductList =  ({accountNumber}) => {
       ))}
       
     </table>
-      
-     
-
 
       
     </Container>

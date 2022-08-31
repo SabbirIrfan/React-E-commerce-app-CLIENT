@@ -97,8 +97,15 @@ const Navbar_user = () => {
           {/* <MenuItem>REGISTER</MenuItem> */}
           <MenuItem 
           onClick={()=>{
-            navigate("/home");
+            navigate("/user");
             
+          }}
+          >
+            Home</MenuItem>
+          <MenuItem 
+          onClick={()=>{
+            navigate("/home");
+
           }}
           >
             SIGN Out</MenuItem>
