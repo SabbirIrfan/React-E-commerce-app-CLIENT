@@ -49,7 +49,7 @@ notice, you need client and server runs concurrently in different terminal sessi
 
 ## Client-side usage(PORT: 3000)
 ```terminal
-$ cd client   // go to client folder
+$ cd react-shop-ui   // go to client folder
 $ npm i       // npm install packages
 $ npm start // run it locally
 
@@ -62,14 +62,14 @@ $ npm start // run it locally
 #(You need to add .env File to run the Server side API code)
 #.env File Structure
 #NODE_ENV = development
-#PORT = 8000
+#PORT = 3006
 #CONNECTION_URL = Your Mongodb Connection Url
 #```
 
 ### Start
 
 ``` terminal
-$ cd Suppliers/server   // go to server folder
+$ cd server   // go to server folder
 $ npm i       // npm install packages
 $ npm start // run it locally
 ```
