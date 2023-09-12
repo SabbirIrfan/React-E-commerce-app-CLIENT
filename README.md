@@ -92,22 +92,26 @@ styled-components : ^5.3.5 | cors: ^2.8.5
 
 ## Screenshots
 
-![Screenshot1](/screenshots/1.png)
+Landing page
+![Landing page](https://user-images.githubusercontent.com/40023605/201540312-a02dae10-de72-4771-b0c1-4108fd9ed3c0.png)
 
-<!-- ![Screenshot2](/screenshots/2.png)
+User can sign in or sign up
+![User can sign in or sign up](https://user-images.githubusercontent.com/40023605/201540387-f1615c85-f473-42f2-a538-0ffb13a68c82.png)
 
-![Screenshot3](/screenshots/3.png)
+After first time sign in a popup appears to enter user bank information.
+![After first time sign in a popup appears to enter user bank information.](https://user-images.githubusercontent.com/40023605/201540300-87751815-16b2-407c-bc8f-032803c8b61a.png)
 
-![Screenshot4](/screenshots/4.png)
+There are three category of products.
+![There are three category of products.](https://user-images.githubusercontent.com/40023605/201540313-bde827c5-961d-4870-8de5-d774213bbc8c.png)
 
-![Screenshot5](/screenshots/5.png)
+Single product details.
+![Single product details.](https://user-images.githubusercontent.com/40023605/201540304-64e6d080-7c22-40b4-8a3b-e095dac9ff52.png)
 
-![Screenshot6](/screenshots/6.png)
+Cart details.
+![Cart details.](https://user-images.githubusercontent.com/40023605/201540307-7dbf11de-c848-48ad-b08e-34b834f8b207.png)
 
-![Screenshot7](/screenshots/7.png)
-
-![Screenshot8](/screenshots/8.png) -->
-
+Admin panel
+![Admin Panel](https://user-images.githubusercontent.com/40023605/201541611-ba46c010-6cbe-4c7e-8ebe-ec085ae12c7e.png)
 
 ## Standard
 

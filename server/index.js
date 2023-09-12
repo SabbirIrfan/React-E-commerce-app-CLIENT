@@ -37,6 +37,7 @@ app.use('/api/order',orderRoutes);
 
 const PORT = process.env.PORT || 5000;
 mongoose.connect(process.env.CONNECTION_URL,{ useNewUrlParser: true, useUnifiedTopology: true})
+.then(()=>{ console.log("connected to database") })
 .then(() => app.listen(PORT, () => console.log('Server running on port: '+PORT)))
 .catch((error) =>console.log(error.message));
 // mongoose.set('useFindAndModify', false);
